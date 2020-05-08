@@ -1,0 +1,20 @@
+
+<div class="d-flex flex-column">
+<h1>Cocktails</h1>
+
+<%= link_to "new cocktail!", new_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
+
+<div class="cards">
+  <% @cocktails.each_with_index do |cocktail, i|%>
+  <%= link_to cocktail_path(cocktail), class: " box-link" do %>
+    <div class="box d-flex flex-column justify-content-between">
+      <div class="d-flex justify-content-between m-2">
+        <h5 class="mb-1"><%=cocktail.name%></h5>
+      </div>
+    </div>
+<% end %>
+  <%end%>
+</div>
+</div>
+
+</div>

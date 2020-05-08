@@ -1,0 +1,24 @@
+<div class="d-flex flex-column">
+
+  <h1><%=@cocktail.name%></h1>
+  <%= link_to "edit", edit_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
+   <ul class="list-group">
+    <% @cocktail.doses.each do |dose| %>
+      <li >
+      <div class="d-flex flex-column ">
+        <h5 class="mb-1"><%=dose.ingredient.name%></h4>
+        <p class="mb-1"><%=dose.description%></p>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+
+<%= simple_form_for [ @cocktail, @dose ] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit "add an ingredient", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+
+
