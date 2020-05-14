@@ -1,24 +1,43 @@
-<div class="d-flex flex-column">
+<div class="d-flex flex-column p-4">
 
   <h1><%=@cocktail.name%></h1>
-  <%= link_to "edit", edit_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
-   <ul class="list-group">
-    <% @cocktail.doses.each do |dose| %>
-      <li >
-      <div class="d-flex flex-column ">
-        <h5 class="mb-1"><%=dose.ingredient.name%></h4>
-        <p class="mb-1"><%=dose.description%></p>
+
+  <div class="flex inline">
+    <%= link_to "home", cocktails_path(), class: "btn btn-secondary btn-lg align-self-end my-2"%>
+    <%= link_to "edit", edit_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
+  </div>
+
+  <div class=" d-flex align-content-around flex-wrap pt-5 pl-5 ">
+    <div class="recipes d-flex flex-column-reverse align-content-end flex-wrap">
+          <% @cocktail.doses.each do |dose| %>
+            <div class="recipe d-flex py-1">
+            <div class="d-flex justify-content-between flex-grow-1 pr-2">
+                <h5 class="mb-1 pr-5"><%=dose.ingredient.name%></h4>
+                <p class="mb-1"><%=dose.description%></p>
+              </div>
+              <%= link_to dose_path(dose),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                  <i class="far fa-trash-alt" style="color: lightgray;"> </i>
+              <% end %>
+              </div>
+          <!-- </li> -->
+          <% end %>
+        <!-- </ul> -->
+      <!-- </div> -->
+    </div>
+    <div class="d-flex align-content-end flex-column flex-wrap">
+      <% @categories.each do |cat| %>
+      <div class="ingredients d-flex justify-content-between">
+        <%= simple_form_for [ @cocktail, @dose ] ,
+          wrapper: :inline_form, html: { class: "form-inline flex" },
+          wrapper_mappings: {boolean: :inline_boolean } do |f| %>
+        <%= f.input :description , input_html: {  rows: 1, class: "mr-2" }%>
+        <%= f.association :ingredient, collection: Ingredient.where('category' => cat), input_html: {  rows: 1} , prompt: cat%>
+        <%= f.submit "add", class: " align-self-right btn btn-light ml-2" %>
+        <% end %>
       </div>
-      </li>
-    <% end %>
-  </ul>
-
-<%= simple_form_for [ @cocktail, @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "add an ingredient", class: "btn btn-primary" %>
-<% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
-

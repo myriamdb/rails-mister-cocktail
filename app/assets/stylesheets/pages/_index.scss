@@ -1,2 +1,39 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
+
+.title{
+  padding-top: 160px;
+  padding-left: 160px;
+  height: 70em;
+  h1 {
+    font-size: 72px;
+    color: rgb(55, 223, 69);
+  }
+  h2 {
+    color: white;
+  }
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+}
+.container {
+  // width: inherit;;
+  height: 100em;
+  justify-content: center;
+  align-content: center;
+  background-position: center;
+  background-image:linear-gradient( rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('brooke-lark.jpg');
+  background-size:cover;
+  position: fixed;
+}
+.cocktails {
+  // height: 40em;
+}
+.bottom
+{
+  overflow: scroll;
+  position: fixed;
+
+}

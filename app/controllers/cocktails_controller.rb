@@ -23,6 +23,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @categories = ['liquor', 'mixer', 'juice', 'garnish', 'spices', 'sweetener', 'ice']
     @dose = Dose.new
   end
 

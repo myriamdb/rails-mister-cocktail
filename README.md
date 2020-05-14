@@ -56,3 +56,77 @@ rails_blob_representation GET    /rails/active_storage/representations/:signed_b
 update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 ➜  rails-mister-cocktail git:(master) ✗ 
+
+
+Photo by Arisa Chattasa on Unsplash
+
+rails g migration AddTypeToIngredients
+
+
+liquor mixers juice garnishes spices sweeteners ice
+
+Liquor: 
+gin
+rum
+bourbon
+brandy
+whiskey
+Cointreau dry
+sweet vermouth
+tequila
+Kahlua
+scotch
+vodka
+cognac
+Amaretto
+Grand Marnier
+Pernod
+triple sec
+
+Mixers: 
+up tonic water
+sparkling water
+lemon juice
+ginger ale
+club soda
+cranberry juice
+Cola
+cola diet
+
+Juice: 
+tomato
+orange
+pineapple
+cranberry
+grapefruit
+lime
+lemon juice
+
+Bitters
+Grenadine
+Hot sauce
+
+
+Garnishes:
+limes
+lemons
+oranges
+maraschino cherries
+pearl onions
+stuffed green olives
+
+spices and sweeteners
+ such as salt, sugar cubes, superfine sugar, Tabasco sauce, Worcestershire sauce, black pepper, cayenne pepper, and cream of coconut.
+ tabasco, Grenadine, Worcestershire sauce, Simple syrup
+
+Ice: One secret to making a great cocktail is using quality ice. Don't use regular freezer ice cubes, which can pick up flavors from frozen food. Instead, buy a bag of ice from the store to use in your drinks.
+Cube 
+Sphere 
+Large cube 
+Block
+Rod
+Pebble
+Crushed
+
+
+psql your_development_database -c "\d"

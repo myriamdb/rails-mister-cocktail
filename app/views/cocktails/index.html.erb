@@ -1,20 +1,27 @@
 
-<div class="d-flex flex-column">
-<h1>Cocktails</h1>
 
-<%= link_to "new cocktail!", new_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
-
-<div class="cards">
-  <% @cocktails.each_with_index do |cocktail, i|%>
-  <%= link_to cocktail_path(cocktail), class: " box-link" do %>
-    <div class="box d-flex flex-column justify-content-between">
-      <div class="d-flex justify-content-between m-2">
-        <h5 class="mb-1"><%=cocktail.name%></h5>
-      </div>
+<div class=" container col-12 d-flex flex-column">
+    <div class="title ">
+      <h1>Cocktails to share</h1>
+      <h2>fun and refreshment</h2>
+      <%= link_to "add yours!", new_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
     </div>
-<% end %>
-  <%end%>
+  
+  <div class="bottom col-12 justify-content-center">
+  <div class="cocktails d-flex flex-row justify-content-center">
+    <!-- <div class="cards"> -->
+      <% @cocktails.each_with_index do |cocktail, i|%>
+        <%= link_to cocktail_path(cocktail), class: " box-link" do %>
+            <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <%=cocktail.name%>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+        <% end %>
+      <%end%>
+    <!-- </div> -->
+  </div>
 </div>
-</div>
-
 </div>

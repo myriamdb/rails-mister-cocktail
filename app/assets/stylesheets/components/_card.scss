@@ -1,0 +1,67 @@
+.card-product {
+  overflow: hidden;
+  height: 160px;
+  width: 240;
+  background: rgba(255, 255, 255, 0.007);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 8px;
+  border: solid 2px white;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: 0 10px 60px rgba(0,0,0,.2);
+    color: #fff;
+    transition: all .2s ease;
+    transform: scale(1.1);
+  }
+}
+.card-product::-webkit-scrollbar {
+display: none;
+}
+.card-product {
+-ms-overflow-style: none;  // IE 10+
+overflow: -moz-scrollbars-none;  // Firefox
+}
+
+.card-product img {
+  height: inherit;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(251, 250, 253);
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-image:linear-gradient( rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('banner.jpg');
+  background-size: cover;
+  
+}
