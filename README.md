@@ -130,3 +130,10 @@ Crushed
 
 
 psql your_development_database -c "\d"
+doses = connection.execute("SELECT * from doses")
+
+
+Photo by Andrew Wong on Unsplash romarin
+Photo by takahiro taguchi on Unsplash manhatan
+
+Photo by Brooke Lark on Unsplash
