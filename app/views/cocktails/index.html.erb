@@ -1,14 +1,14 @@
 
 
-<div class=" container col-12 d-flex flex-column">
-    <div class="title ">
-      <h1>Cocktails to share</h1>
-      <h2>fun and refreshment</h2>
+<div class=" container col-12 d-flex flex-row justify-content-between pr-2">
+    <div class="title col-6">
+      <h1>Kokomo-drinks </h1>
+      <h2>cocktails to share</h2>
       <%= link_to "add yours!", new_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
     </div>
   
-  <div class="bottom col-12 justify-content-center">
-  <div class="cocktails d-flex flex-row justify-content-center">
+  <div class="bottom justify-content-center ">
+  <div class="cocktails d-flex flex-column justify-content-center">
     <!-- <div class="cards"> -->
       <% @cocktails.each_with_index do |cocktail, i|%>
         <%= link_to cocktail_path(cocktail), class: " box-link" do %>

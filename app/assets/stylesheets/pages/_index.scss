@@ -4,7 +4,7 @@
 
 
 .title{
-  padding-top: 160px;
+  padding-top: 320px;
   padding-left: 160px;
   height: 70em;
   h1 {
@@ -24,7 +24,7 @@
   justify-content: center;
   align-content: center;
   background-position: center;
-  background-image:linear-gradient( rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('brooke-lark.jpg');
+  background-image:linear-gradient( rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('coconut.jpg');
   background-size:cover;
   position: fixed;
 }
@@ -33,7 +33,18 @@
 }
 .bottom
 {
-  overflow: scroll;
-  position: fixed;
+  padding-top: 50em;
+  overflow-y: scroll;
+  // position: fixed;
+  // top: 400px;
+  // left: 80em;
 
 }
+
+// .bottom::-webkit-scrollbar {
+//   display: none;
+//   }
+// .bottom {
+//   -ms-overflow-style: none;  // IE 10+
+//   overflow: -moz-scrollbars-none;  // Firefox
+//   }
