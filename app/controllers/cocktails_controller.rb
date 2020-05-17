@@ -27,7 +27,6 @@ class CocktailsController < ApplicationController
   end
   
   def edit
-    @cocktail = Cocktail.find(params[:id])
   end
 
   def show
@@ -43,7 +42,6 @@ class CocktailsController < ApplicationController
 
   
   def update
-    @cocktail = Cocktail.find(params[:id])
     @cocktail.update(cocktail_params)
     redirect_to cocktails_path
   end
