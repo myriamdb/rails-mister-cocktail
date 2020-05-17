@@ -7,8 +7,12 @@ class CocktailsController < ApplicationController
 
   def rum 
     liquor = params[:liquor]
-    @cocktails = Cocktail.joins(:ingredients).where(ingredients: { name: liquor })
-    @cocktails = [] if @cocktails.nil?
+    if liquor == "none"
+      @cocktails = Cocktail.joins(:ingredients).where.not(ingredients: { category: "liquor" }).uniq
+    else
+      @cocktails = Cocktail.joins(:ingredients).where(ingredients: { name: liquor }).uniq
+      @cocktails = [] if @cocktails.nil?
+    end
     render "index"
   end
 
