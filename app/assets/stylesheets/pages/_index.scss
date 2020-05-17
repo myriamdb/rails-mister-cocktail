@@ -14,37 +14,35 @@
   h2 {
     color: white;
   }
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-}
-.container {
-  // width: inherit;;
-  height: 100em;
-  justify-content: center;
-  align-content: center;
-  background-position: center;
-  background-image:linear-gradient( rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('coconut.jpg');
-  background-size:cover;
   position: fixed;
 }
+.full_height {
+  height: 100%;
+  position: fixed;
+  padding-top: 800px;
+}
+.sticky {
+    position: relative ;
+    color: white;
+    &:hover {
+      color: rgb(55, 223, 69);
+      text-decoration: none;
+    }
+}
+.containers {
+  height: 100em;
+  background-image:linear-gradient( rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('coconut.jpg');
+  background-repeat:no-repeat;
+   background-size: cover;
+  background-position: center;
+  background-color: #464646;
+  background-attachment: fixed;
+}
 .cocktails {
-  // height: 40em;
-}
-.bottom
-{
-  padding-top: 50em;
-  overflow-y: scroll;
-  // position: fixed;
-  // top: 400px;
-  // left: 80em;
+  overflow: scroll;
 
 }
-
-// .bottom::-webkit-scrollbar {
-//   display: none;
-//   }
-// .bottom {
-//   -ms-overflow-style: none;  // IE 10+
-//   overflow: -moz-scrollbars-none;  // Firefox
-//   }
+.drinks {
+  // padding-top: 250px;
+  // padding-left: 16px;
+}

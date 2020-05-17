@@ -1,27 +1,72 @@
 
+<div class="containers col-12">
+  <div class="row">
+    <div class="col-6">
+        <div class="title ">
+          <h1>Kokomo-drinks </h1>
+          <h2>cocktails to share</h2>
+          <%= link_to "add yours!", new_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
+        </div>
+    </div>
+    <div class="col-3 ">
+      <row class=" full_height justify-content-end align-content-end">
+        <div ><%= link_to "no filter", root_path, class: "sticky"%></div>
+        <div><%= link_to "rum", rum_cocktails_path(liquor: "rum"), class: "sticky"%></div>
+        <div><%= link_to "vodka", rum_cocktails_path(liquor: "vodka"), class: "sticky"%></div>
+        <div><%= link_to "tequila", rum_cocktails_path(liquor: "tequila"), class: "sticky"%></div>
+      </row>
+    </div>
+    <div class="col-3 ">
+      <div class="row drinks ">
+        <div class="cocktails">
+            <% @cocktails.each do |cocktail|%>
+              <%= link_to cocktail_path(cocktail), class: " row box-link" do %>
+                  <div class="card-product">
+                    <% if cocktail.photo.attached? %>
+                      <%= cl_image_tag ( cocktail.photo.key) , height: 240,  crop: :fill%>
+                    <% else %>
+                      <%= image_tag("default.jpg") %>
+                    <% end %>
+                    <div class="card-product-infos">
+                      <%=cocktail.name%>
+                      <p>Product description with <strong>relevant info</strong> only.</p>
+                    </div>
+                  </div>
+              <% end %>
+            <%end%>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class=" container col-12 d-flex flex-row justify-content-between pr-2">
-    <div class="title col-6">
+<!-- 
+<div class=" container col-12 d-flex flex-row justify-content-between  pr-2">
+  <div col-6>
+    <div class="title ">
       <h1>Kokomo-drinks </h1>
       <h2>cocktails to share</h2>
       <%= link_to "add yours!", new_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
     </div>
-  
-  <div class="bottom justify-content-center ">
-  <div class="cocktails d-flex flex-column justify-content-center">
-    <!-- <div class="cards"> -->
-      <% @cocktails.each_with_index do |cocktail, i|%>
-        <%= link_to cocktail_path(cocktail), class: " box-link" do %>
-            <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <%=cocktail.name%>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
-        <% end %>
-      <%end%>
-    <!-- </div> -->
+
   </div>
-</div>
-</div>
+    <div class=" drinks col-6 bottom justify-content-center align-content-center ">
+    <div class="cocktails d-flex flex-column">
+        <% @cocktails.each do |cocktail|%>
+          <%= link_to cocktail_path(cocktail), class: " box-link" do %>
+              <div class="card-product">
+                <% if cocktail.photo.attached? %>
+                  <%= cl_image_tag ( cocktail.photo.key) , height: 240,  crop: :fill%>
+                <% else %>
+                  <%= image_tag("default.jpg") %>
+                <% end %>
+                <div class="card-product-infos">
+                  <%=cocktail.name%>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+          <% end %>
+        <%end%>
+    </div>
+  </div>
+</div> -->

@@ -5,6 +5,13 @@ class CocktailsController < ApplicationController
     @cocktails = [] if @cocktails.nil?
   end
 
+  def rum 
+    liquor = params[:liquor]
+    @cocktails = Cocktail.joins(:ingredients).where(ingredients: { name: liquor })
+    @cocktails = [] if @cocktails.nil?
+    render "index"
+  end
+
   def new
     @cocktail = Cocktail.new
     @dose = Dose.new
@@ -45,6 +52,6 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
   def cocktail_params
-    params.require(:cocktail).permit(:name, :doses)
+    params.require(:cocktail).permit(:name, :doses, :photo)
   end
 end
