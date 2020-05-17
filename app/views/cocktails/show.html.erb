@@ -5,6 +5,10 @@
   <div class="flex inline">
     <%= link_to "home", cocktails_path(), class: "btn btn-secondary btn-lg align-self-end my-2"%>
     <%= link_to "edit", edit_cocktail_path(@cocktail), class: "btn btn-secondary btn-lg align-self-end my-2"%>
+    <%= link_to "Delete",
+            cocktail_path(@cocktail),
+            method: :delete,
+            data: { confirm: "Are you sure?" }, class: "btn btn-secondary btn-lg align-self-end my-2"%>
   </div>
 
   <div class=" d-flex align-content-around flex-wrap pt-5 pl-5 ">
